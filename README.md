@@ -55,9 +55,14 @@ ordem — leva uns 20–30 minutos:
    pra testar antes de vender de verdade)
 3. Copie o **Access Token** → vai virar `MP_ACCESS_TOKEN`
 4. Depois que o site estiver no ar (passo 5), volte aqui em
-   **Credenciais → Webhooks** (ou "Suas integrações → Webhooks") e cadastre:
+   **Sua aplicação → Webhooks → Configurar notificações** e cadastre a URL:
    `https://SEU-DOMINIO.com.br/api/mp-webhook`
+   marcando pelo menos o tópico **Pagamentos**.
    Isso é o que confirma o pagamento automaticamente quando o Pix cai.
+5. Na mesma tela de Webhooks, copie a **Chave secreta** (assinatura) →
+   vai virar `MP_WEBHOOK_SECRET`. É ela que garante que só o Mercado Pago
+   de verdade consegue avisar seu site que um pagamento foi aprovado —
+   sem isso, o site rejeita a notificação por segurança.
 
 ## 4. Configurar as variáveis de ambiente
 
